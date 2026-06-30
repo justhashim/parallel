@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/postbuild.mjs",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
+    "@types/chrome": "^0.2.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
   }

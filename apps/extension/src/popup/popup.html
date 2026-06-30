@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: sans-serif; width: 240px; padding: 14px; background: #0f0f13; color: #e5e5e5; }
+
+      h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; letter-spacing: 0.03em; color: #fff; }
+      h3 span { color: #818CF8; }
+
+      label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+      input {
+        width: 100%; padding: 7px 9px;
+        margin-bottom: 10px;
+        background: #1c1c24; border: 1px solid #2e2e40;
+        border-radius: 6px; color: #e5e5e5; font-size: 13px;
+        outline: none; transition: border-color 0.15s;
+      }
+      input:focus { border-color: #6366F1; }
+      input::placeholder { color: #555; }
+
+      .btn-row { display: flex; gap: 7px; margin-bottom: 12px; }
+
+      button {
+        flex: 1; padding: 7px 0;
+        border: none; border-radius: 6px;
+        font-size: 12px; font-weight: 600; cursor: pointer;
+        transition: opacity 0.15s;
+      }
+      button:hover { opacity: 0.85; }
+
+      #joinBtn  { background: #6366F1; color: #fff; }
+      #leaveBtn { background: #374151; color: #ccc; }
+
+      .status {
+        font-size: 12px; line-height: 1.7;
+        padding: 9px 10px; border-radius: 6px;
+        background: #1c1c24; border: 1px solid #2e2e40;
+        color: #aaa;
+      }
+      .dot {
+        display: inline-block; width: 8px; height: 8px;
+        border-radius: 50%; margin-right: 5px; vertical-align: middle;
+      }
+      .connected    { background: #34D399; }
+      .disconnected { background: #F87171; }
+
+      #errorMsg { font-size: 11px; color: #F87171; margin-bottom: 8px; min-height: 14px; }
+    </style>
+  </head>
+  <body>
+    <h3>⚡ <span>Parallel</span></h3>
+
+    <label for="roomId">Room ID</label>
+    <input id="roomId" type="text" placeholder="e.g. my-room-42" />
+
+    <label for="userId">Your Name</label>
+    <input id="userId" type="text" placeholder="e.g. alice" />
+
+    <p id="errorMsg"></p>
+
+    <div class="btn-row">
+      <button id="joinBtn">Join</button>
+      <button id="leaveBtn">Leave</button>
+    </div>
+
+    <div class="status" id="status">Checking status…</div>
+
+    <script type="module" src="popup.ts"></script>
+  </body>
+</html>
