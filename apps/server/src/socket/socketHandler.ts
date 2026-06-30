@@ -7,7 +7,7 @@ export default function socketHandler(io: Server) {
     console.log(`✅ Connected: ${socket.id}`);
 
     // ── join_room ──────────────────────────────────────────────────────────────
-    // Uses a Socket.IO acknowledgment to send room info back to the joiner.
+    
     socket.on("join_room", (data, ack) => {
       const { roomId, userId } = data;
       console.log(`📥 ${socket.id} joined room "${roomId}" as "${userId}"`);
